@@ -18,6 +18,8 @@
             8. yup
             9. react-redux
             10. axios
+            11.redux
+            12. redux-thunk
 
         Back-end:
             1. pipenv install
