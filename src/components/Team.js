@@ -1,8 +1,8 @@
 import React from "react"
-import { useDispatch } from "react-redux"
+// import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import { deleteTeam } from "../Redux/teamAction"
-import axios from "axios"
+// import { deleteTeam } from "../Redux/teamAction"
+// import axios from "axios"
 
 function Team({passTeam}){
     const {name, mascot}=passTeam

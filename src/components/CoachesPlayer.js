@@ -4,7 +4,7 @@ import PlayerCard from './PlayerCard'
 import {useSelector} from 'react-redux'
 import axios from 'axios'
 
-function ShowCoachesPlayers(){
+function CoachesPlayers(){
     const [players, setPlayers]=useState([])
     const {id} = useParams()
     const coaches=useSelector(state=>state.coaches.leagueCoaches)
@@ -27,4 +27,4 @@ function ShowCoachesPlayers(){
     )
 }
 
-export default ShowCoachesPlayers
+export default CoachesPlayers
