@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#postgresql://dtruesdale:CCCOUfy7x6hCpAWP3q66EkFBco2uORuo@dpg-cledmq8lccns73e837bg-a.oregon-postgres.render.com/football_database_5k2n
 #app
 from flask import request, jsonify, make_response
 from flask_restful import Resource
