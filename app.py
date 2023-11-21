@@ -1,31 +1,8 @@
 #!/usr/bin/env python3
-#config
-from flask import Flask
-from flask_cors import CORS
-from flask_migrate import Migrate
-from flask_restful import Api
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import MetaData
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.json.compact = False
-
-metadata = MetaData(naming_convention={
-    "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
-})
-db = SQLAlchemy(metadata=metadata)
-migrate = Migrate(app, db)
-db.init_app(app)
-
-api = Api(app)
-
-CORS(app)
-
 #app
 from flask import request, jsonify, make_response
 from flask_restful import Resource
+from config import app, db, api
 from models import Player, Coach, Team, player_coach_association, Match
 
 @app.route('/')
@@ -162,7 +139,7 @@ class CoachById(Resource):
     def get(self, id):
         coach=Coach.query.filter_by(id=id).first()
         coach_dict=coach.to_dict()
-        resposne=make_response(jsonify(coach_dict), 200)
+        response=make_response(jsonify(coach_dict), 200)
         return response
     
     def patch(get, id):

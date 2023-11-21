@@ -2,8 +2,7 @@ from sqlalchemy import MetaData, ForeignKey, Column, Table
 from sqlalchemy.orm import validates, relationship
 from sqlalchemy_serializer import SerializerMixin
 from sqlalchemy.ext.associationproxy import association_proxy
-
-from app import db
+from config import db
 
 # Models go here!
 player_coach_association=db.Table('player_coach_association',
@@ -33,7 +32,7 @@ class Coach(db.Model, SerializerMixin):
 
     id=db.Column(db.Integer, primary_key=True)
     name=db.Column(db.String, nullable=False, unique=True)
-    coaching_position=db.Column(db.Integer)
+    coaching_position=db.Column(db.String)
     
     team=db.relationship('Team', back_populates='coaches')
     team_id=db.Column(db.Integer, db.ForeignKey('teams.id'))
@@ -68,7 +67,7 @@ class Match(db.Model, SerializerMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String, nullable=False)
-    location = db.Column(db.String)
+    location = db.Column(db.String, nullable=False)
     home_team_id = db.Column(db.Integer, db.ForeignKey('teams.id'), nullable=False)
     away_team_id = db.Column(db.Integer, db.ForeignKey('teams.id'), nullable=False)
 
