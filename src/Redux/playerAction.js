@@ -45,7 +45,7 @@ export const postPlayer=(newPlayer)=>{
 export const fetchPlayers= () =>{
     return (dispatch)=>{
         dispatch(fetchPlayersRequest)
-        axios.get('/players')
+        axios.get('https://football-database-mj79.onrender.com/players')
         .then(response=>{
             const players = response.data
             dispatch(fetchPlayersSuccess(players))

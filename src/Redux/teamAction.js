@@ -38,7 +38,7 @@ export const postTeam=(newTeam)=>{
 export const fetchTeams= () =>{
     return (dispatch)=>{
         dispatch(fetchTeamsRequest)
-        axios.get('/teams')
+        axios.get('https://football-database-mj79.onrender.com/teams')
         .then(response=>{
             const teams = response.data
             dispatch(fetchTeamsSuccess(teams))

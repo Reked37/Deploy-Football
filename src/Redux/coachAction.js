@@ -45,7 +45,7 @@ export const updateCoach=(coachId)=>{
 export const fetchCoaches= () =>{
     return (dispatch)=>{
         dispatch(fetchCoachesRequest)
-        axios.get('/coaches')
+        axios.get('https://football-database-mj79.onrender.com/coaches')
         .then(response=>{
             const coaches = response.data
             dispatch(fetchCoachesSuccess(coaches))

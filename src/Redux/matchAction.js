@@ -31,7 +31,7 @@ export const postMatch=(newMatch)=>{
 export const fetchMatches= () =>{
     return (dispatch)=>{
         dispatch(fetchMatchesRequest)
-        axios.get('/matches')
+        axios.get('https://football-database-mj79.onrender.com/matches')
         .then(response=>{
             const matches = response.data
             dispatch(fetchMatchesSuccess(matches))
