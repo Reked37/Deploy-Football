@@ -45,7 +45,7 @@ export const updateCoach=(coachId)=>{
 export const fetchCoaches= () =>{
     return (dispatch)=>{
         dispatch(fetchCoachesRequest)
-        axios.get('/coaches')
+        axios.get('http://127.0.0.1:5555/coaches')
         .then(response=>{
             const coaches = response.data
             dispatch(fetchCoachesSuccess(coaches))
