@@ -30,6 +30,7 @@
             6. Faker (seeding)
             7. flask_restful
             8. flask_cors
+            9. flask-serializer
 
 # Usage
     The home page will be the first page you see when opening the webpage. In the top is the navigation bar which will direct you to other paths. The players page will list all the players in the Flatiron Football League which you can edit the player info with the update button. If the delete button is clicked the player will be deleted from the list.
