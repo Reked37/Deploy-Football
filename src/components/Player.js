@@ -11,7 +11,7 @@ function Player({passPlayer}){
 
     function handleDeletePlayer(){
         dispatch(deletePlayer(passPlayer.id))
-        axios.delete(`/players/${passPlayer.id}`)
+        axios.delete(`https://football-database-mj79.onrender.com/players/${passPlayer.id}`)
         .then(res=>res.data)
         .catch(error=>console.log("Couldn't delete player", error))
     }

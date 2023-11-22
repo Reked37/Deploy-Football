@@ -15,7 +15,7 @@ function Coach({passCoach}){
 
     function handleDeleteCoach(){
         dispatch(deleteCoach(passCoach.id))
-        axios.delete(`/coaches/${passCoach.id}`)
+        axios.delete(`https://football-database-mj79.onrender.com/coaches/${passCoach.id}`)
         .then(res=>res.data)
         .catch(error=>console.log(error))
     }
