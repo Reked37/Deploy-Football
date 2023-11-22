@@ -19,10 +19,10 @@ function UpdatePlayer({updatePlayer}){
     }
  
     const onSubmit=values=>{
-        axios.patch(`/players/${player.id}`, values)
+        axios.patch(`https://football-database-mj79.onrender.com/players/${player.id}`, values)
         .then(res=>updatePlayer(res.data))
         .catch(error=>console.log("Couldn't update player", error))
-        navigate('/players')
+        navigate('https://football-database-mj79.onrender.com/players')
     }
  
     return(

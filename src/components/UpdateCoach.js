@@ -19,10 +19,10 @@ function UpdateCoach(){
     }
  
     const onSubmit= newCoach=>{
-        axios.patch(`/coaches/${coach.id}`, newCoach)
+        axios.patch(`https://football-database-mj79.onrender.com/coaches/${coach.id}`, newCoach)
         .then(res=>{
             dispatch(updateCoach(res.data))
-            navigate('/coaches')})
+            navigate('https://football-database-mj79.onrender.com/coaches')})
         .catch(error=>console.log("Couldn't update coach", error))
        
     }
