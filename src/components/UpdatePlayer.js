@@ -22,7 +22,7 @@ function UpdatePlayer({updatePlayer}){
         axios.patch(`https://football-database-mj79.onrender.com/players/${player.id}`, values)
         .then(res=>updatePlayer(res.data))
         .catch(error=>console.log("Couldn't update player", error))
-        navigate('https://football-database-mj79.onrender.com/players')
+        navigate('/players')
     }
  
     return(

@@ -22,7 +22,7 @@ function UpdateCoach(){
         axios.patch(`https://football-database-mj79.onrender.com/coaches/${coach.id}`, newCoach)
         .then(res=>{
             dispatch(updateCoach(res.data))
-            navigate('https://football-database-mj79.onrender.com/coaches')})
+            navigate('/coaches')})
         .catch(error=>console.log("Couldn't update coach", error))
        
     }
