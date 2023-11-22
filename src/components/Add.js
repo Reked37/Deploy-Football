@@ -23,7 +23,7 @@ function Add(){
     }
    
     const onSubmitPlayer= values=>{
-       axios.post('/players', values)
+       axios.post('https://football-database-mj79.onrender.com/players', values)
         .then(res =>{
             postPlayer(res.data)
             return navigate('/players')})
@@ -38,7 +38,7 @@ function Add(){
     }
 
     const onSubmitTeam= values=>{
-        axios.post('/teams', values)
+        axios.post('https://football-database-mj79.onrender.com/teams', values)
          .then(res =>{
             postTeam(res.data)
             return navigate('/teams')})
@@ -64,7 +64,7 @@ function Add(){
     }
 
     const onSubmitCoach= values=>{
-        axios.post('/coaches', values)
+        axios.post('https://football-database-mj79.onrender.com/coaches', values)
          .then(res =>{
             postCoach(res.data); 
             return navigate('/coaches')})
@@ -85,7 +85,7 @@ function Add(){
         date:"",
     }
     const onSubmitMatch=values=>{
-        axios.post('/matches', values)
+        axios.post('https://football-database-mj79.onrender.com/matches', values)
         .then(res=>{
             postMatch(res.data);
             return navigate('/matches')
