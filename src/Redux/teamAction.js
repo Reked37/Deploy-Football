@@ -28,13 +28,6 @@ export const postTeam=(newTeam)=>{
     }
 }
 
-// export const deleteTeam=(teamId)=>{
-//     return{
-//         type:DELETE_TEAM,
-//         payload:teamId
-//     }
-// }
-
 export const fetchTeams= () =>{
     return (dispatch)=>{
         dispatch(fetchTeamsRequest)

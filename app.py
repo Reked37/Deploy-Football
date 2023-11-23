@@ -45,12 +45,6 @@ class PlayerByID(Resource):
         for attr, value in json.items():
             setattr(player, attr, value)
 
-        # if "team" in json:
-        #     team_data = json["team"]
-        #     if player.team:
-        #         for attr, value in team_data.items():
-        #             setattr(player.team, attr, value)
-
         db.session.add(player)
         db.session.commit()
         player_dict=player.to_dict()
@@ -91,27 +85,6 @@ class Teams(Resource):
         response=make_response(jsonify(team_dict), 201)
         return response
 api.add_resource(Teams, '/teams')
-
-# class TeamById(Resource):
-#     def get(self, id):
-#         team=Team.query.filter_by(id=id).first()
-#         team_dict=team.to_dict()
-#         return make_response(jsonify(team_dict), 200)
-    
-#     # def patch(get, id):
-#     #     team=Team.query.filter_by(id=id).first()
-#     #     json=request.get_json()
-#     #     for attr in json:
-#     #         setattr(team, attr, json[attr])
-    
-#     def delete (self, id):
-#         team=Team.query.filter_by(id=id).first()
-#         db.session.delete(team)
-#         db.session.commit()
-#         response_body={'message': 'Team has been deleted'}
-#         response=make_response(response_body, 200)
-#         return response
-# api.add_resource(TeamById, '/teams/<int:id>')
 
 class Coaches(Resource):
     def get(self):

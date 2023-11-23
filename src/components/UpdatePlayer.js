@@ -37,8 +37,6 @@ function UpdatePlayer({updatePlayer}){
                     <Field type='text' id='name' name='name' className='field'></Field><br/>
                     <label className='label'> Jersey Number: </label>
                     <Field type='number' id='jersey_number' name='jersey_number' className='field'/><br/>
-                    {/* <label className='label'> Team: </label>
-                    <Field type='text' id='team_name' name='team_name' className='field'/><br/><br/> */}
                     <button type='submit' className='ui green button'> Submit </button>
                 </Form>
             </Formik><br/><br/>
